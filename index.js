@@ -14,7 +14,10 @@ app.use(
   morgan('tiny'),
   helmet(),
   cors(),
-  bodyParser.json({ limit: `${process.env.PAYLOAD_SIZE}mb`, extended: true }),
+  bodyParser.json({
+  	limit: `${process.env.PAYLOAD_SIZE}mb`,
+  	extended: true
+  }),
   loggerMiddleware,
   routes,
 );
